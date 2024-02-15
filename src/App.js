@@ -31,6 +31,7 @@ const App = () => {
         value={input}
         onChange={(e) => setInput(e.target.value)}
         className="input"
+        data-testid="calculator-input"
       />
       <div className="buttons">
         <button className="operator" onClick={() => handleButtonClick('7')}>7</button>
