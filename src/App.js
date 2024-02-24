@@ -17,7 +17,28 @@ const App = () => {
   };
 
   const handleLog = () => {
-    setInput(Math.log10(parseFloat(input)).toString());
+    setInput(Math.log(parseFloat(input)).toString());
+  };
+
+  const handleSquare = () => {
+    setInput(Math.sqrt(parseFloat(input)).toString());
+  };
+
+  const handleFactorial = () => {
+    const num = parseInt(input);
+    if (num < 0) {
+      setInput('Error');
+      return;
+    }
+    let result = 1;
+    for (let i = 2; i <= num; i++) {
+      result *= i;
+    }
+    setInput(result.toString());
+  };
+
+  const handleNaturalLog = () => {
+    setInput(Math.log(parseFloat(input)).toString());
   };
 
   const handlePower = () => {
@@ -51,6 +72,9 @@ const App = () => {
         <button className="operator" onClick={() => handleButtonClick('.')}>.</button>
         <button className="operator" onClick={() => handleButtonClick('+')}>+</button>
         <button className="special" onClick={handleLog}>log</button>
+        <button className="special" onClick={handleSquare}>√</button>
+        <button className="special" onClick={handleFactorial}>!</button>
+        <button className="special" onClick={handleNaturalLog}>ln</button>
         <button className="special" onClick={handlePower}>x^2</button>
       </div>
     </div>
