@@ -14,8 +14,8 @@ describe('Calculator App', () => {
   // Test case for checking if button click updates input value
   test('button click updates input value', () => {
     const { getByText, getByTestId } = render(<App />);
-    fireEvent.click(getByText('7')); // Simulate clicking on button '7'
-    expect(getByTestId('calculator-input')).toHaveValue('7'); // Check if input value is updated
+    fireEvent.click(getByText('8')); // Simulate clicking on button '7'
+    expect(getByTestId('calculator-input')).toHaveValue('8'); // Check if input value is updated
   });
 
   // Add more test cases as needed for other functionalities
